@@ -64,6 +64,8 @@ class Telephone_directory:
                           User's Age : {self.age}
                           User's Blood Group : {self.blood_group} 
                           User's City : {self.city} """)
+                user_menu(self)
+                
 
         def update_record(self):
             self.list1 = [ ] 
@@ -76,6 +78,7 @@ class Telephone_directory:
                     i = i+1
             else:
                 print(f"User with {self.user_input} does not exit!")
+                user_menu(self)
             
                 
         def delete_record(self):
@@ -84,7 +87,8 @@ class Telephone_directory:
             if self.user_input in self.list1:
                 print(f"User with {self.user_input} deleted successfully!")
             else:
-                print(f"User with {self.user_input} does not exit!")                
+                print(f"User with {self.user_input} does not exit!") 
+            user_menu(self)               
                 
         
         def block_record(self):
@@ -93,7 +97,8 @@ class Telephone_directory:
             if self.user_input in self.list1:
                 print(f"User with {self.user_input} blocked successfully!")
             else:
-                print(f"User with {self.user_input} does not exit!")  
+                print(f"User with {self.user_input} does not exit!") 
+            user_menu(self) 
 
                 
         def unblock_record(self):
@@ -102,7 +107,8 @@ class Telephone_directory:
             if self.user_input in self.blocked:
                 print(f"User with {self.user_input} unblocked successfully!")
             else:
-                print(f"User with {self.user_input} does not exit in blocked list!")  
+                print(f"User with {self.user_input} does not exit in blocked list!") 
+            user_menu(self) 
 
         def searchRecord_Alpha(self):
             self.list1 = ['Ehtisham','Ali','Ayesha','Dua','Adeen']
@@ -110,6 +116,7 @@ class Telephone_directory:
             for i in self.list1:
                 if i.startswith(self.user_input):
                     print(i)
+            user_menu(self)
 
         
         def searchRecord_city(self):
@@ -118,7 +125,7 @@ class Telephone_directory:
             for i in self.city:
                 if i == self.user_input:
                     print(i)
-                
+            user_menu(self)
 
         def searchRecord_blood(self):
             self.blood = ['Ehtisham','Ali','Ayesha','Dua','Adeen']
@@ -126,6 +133,7 @@ class Telephone_directory:
             for i in self.blood:
                 if i == self.user_input:
                     print(i)
+            user_menu(self)
 
         while True:
                 self.main_choice = int(input("""
